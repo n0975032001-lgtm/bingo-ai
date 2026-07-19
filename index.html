@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宥任 BINGO AI</title>
+
+<style>
+body{
+    background:#111827;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+    margin:0;
+    padding:30px;
+}
+.card{
+    background:#1f2937;
+    border-radius:20px;
+    padding:20px;
+    max-width:400px;
+    margin:auto;
+}
+h1{
+    color:#ffd54f;
+}
+.number{
+    font-size:45px;
+    font-weight:bold;
+    margin:15px;
+}
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    font-size:20px;
+    background:#22c55e;
+    color:white;
+}
+button:active{
+    transform:scale(.98);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🎰 宥任 BINGO AI</h1>
+
+<h3>AI 推薦三星</h3>
+
+<div id="nums" class="number">
+13・31・68
+</div>
+
+<button onclick="pick()">
+重新推薦
+</button>
+
+</div>
+
+<script>
+
+function pick(){
+
+let arr=[];
+
+while(arr.length<3){
+
+let n=Math.floor(Math.random()*80)+1;
+
+if(!arr.includes(n))
+arr.push(n);
+
+}
+
+arr.sort((a,b)=>a-b);
+
+document.getElementById("nums").innerHTML=
+arr.join("・");
+
+}
+
+</script>
+
+</body>
+</html>
